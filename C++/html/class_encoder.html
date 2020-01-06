@@ -116,7 +116,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void Encoder::compress </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>text</em>, </td>
+          <td class="paramname"><em>textRead</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -131,6 +131,12 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Sub-function of read that uses <a class="el" href="class_golomb.html">Golomb</a> to encode data and <a class="el" href="class_bit_stream.html">BitStream</a> to write it on a file. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">textRead</td><td>data read from the file to be encoded by golomb and written on a file by the bitstream </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -148,6 +154,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Function that reads a compressed file, decompresses it and shows each frame. </p>
 
 </div>
 </div>
@@ -165,6 +172,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Function that reads a video file, compresses it and writes it down. </p>
 
 </div>
 </div>
@@ -205,6 +213,13 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Function used to predict the next value of the image matrix, used by writeData and readData. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>array with data on the frame </td></tr>
+    <tr><td class="paramname">tipo</td><td>predictor type </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
