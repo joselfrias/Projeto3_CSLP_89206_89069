@@ -22,6 +22,11 @@ Golomb::Golomb(int m){
     this->b=ceil(log2(m));
 }
 
+/**
+  *
+  *Encode function Turns a number into a list of 1s and 0s using the golomb encoding algorithm.
+  *@param number: number to be encoded
+  */
 vector<int> Golomb::encode(int number){
     int q = number/m;
     int r = number%r;
@@ -34,17 +39,20 @@ vector<int> Golomb::encode(int number){
         int bit = (r >> i) & 1;
         ret.push_back(bit);
     }
-    for(int i = 0; i < ret.size(); i++){
-        cout << ret.at(i);
-    }
     return ret;
 }
 
+/**
+  *
+  *Decode function Turns a list of 1s and 0s into a number using the golomb decoding algoritm.
+  *@param codigo: Codigo para ser descodificado 
+  */
 int Golomb::decode(vector<int> codigo){
     int q = 0;
-    while(codigo.size() > 0){
-        int a = codigo.at(codigo.size() - 1);
-        codigo.pop_back();
+    int l = codigo.size();
+    while(l > 0){
+        int a = codigo.at(l - 1);
+        l--;
         if(a == 0){
             break;
         }
@@ -57,7 +65,5 @@ int Golomb::decode(vector<int> codigo){
         r = r + bit << i;
     }
     return q*m + r;
-    
-    //return 0;
 }
 
