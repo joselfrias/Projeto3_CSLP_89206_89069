@@ -1,24 +1,16 @@
 import math
 
+##Documentation for Golomb class
+#
+#Details
 
-'''def main():
-
-    #Use example of the slides
-    golomb = Golomb(4)
-    l=golomb.encode(11)
-    print (l)
-
-    x=golomb.decode(l)
-    print (x)
-
-
-
-'''
 class Golomb:
     def __init__(self,m):
         self.m = m
         self.b = math.ceil(math.log2(m))
 
+##Encode function
+#Turns a number into a list of 1s and 0s using the golomb encoding algorithm
     def encode(self, number):
         (q, r)=divmod(number, self.m)
         #Write number of '1' equal to the number of quocient and add a zero
@@ -32,6 +24,8 @@ class Golomb:
             ret.append(bit)
         return ret
 
+##Decode function
+#Turns a list of 1s and 0s into a number using the golomb decoding algoritm
     def decode(self, codigo):
         q = 0
         while codigo.pop(0):
